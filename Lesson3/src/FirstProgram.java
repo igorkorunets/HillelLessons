@@ -8,19 +8,16 @@ public class FirstProgram {
     String str = "hello";
 
     Student student1 = new Student();
-    student1.name = "John Doe";
-    student1.age = 12;
+    student1.setName("John Doe");
+    student1.setAge(12);
 
     Student student2 = new Student();
-    student2.name = "Jonathan Doelsky";
-    student2.age = 92;
+    student2.setName("Jonathan Doelsky");
+    student2.setAge(92);
 
     System.out.println(student1);
     System.out.println(student2);
 
-    while(student2.isAlreadyDead()) {
-
-    }
     student2.growImidiately();
     System.out.println(student2);
     student2.growImidiately();
@@ -33,8 +30,15 @@ class Student {
 
   public String toString() {
     if (isAlreadyDead())
-    return "I was a student. I'm dead now :(";
+      return "I was a student. I'm dead now :(";
+
     return "I'm a student. My name is " + name + ". I'm " + age + " years old.";
+  }
+  public void setName(String nameParam) {
+    name = nameParam;
+  }
+  public void setAge(int age) {
+    this.age = age;
   }
   public boolean isAlreadyDead() {
     return age >= 94;
