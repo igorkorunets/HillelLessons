@@ -7,14 +7,23 @@ public class FirstProgram {
     Object obj  = new Object();
     String str = "hello";
 
-    Student student = new Student();
-    student.name = "John Doe";
-    student.age = 12;
+    Student student1 = new Student();
+    student1.name = "John Doe";
+    student1.age = 12;
 
-    System.out.println(student);
+    Student student2 = new Student();
+    student2.name = "Jonathan Doelsky";
+    student2.age = 92;
+
+    System.out.println(student1);
+    System.out.println(student2);
   }
 }
 class Student {
   String name;
   int age;
+
+  public String toString() {
+    return "I'm a student. My name is " + name + ". I'm " + age + " years old.";
+  }
 }
