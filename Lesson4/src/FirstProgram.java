@@ -17,6 +17,10 @@ public class FirstProgram {
 
     System.out.println(student1);
     System.out.println(student2);
+    student2.growImidiately();
+    System.out.println(student2);
+    student2.growImidiately();
+    System.out.println(student2);
   }
 }
 class Student {
@@ -24,6 +28,11 @@ class Student {
   int age;
 
   public String toString() {
+    if (age >= 94)
+    return "I was a student. I'm dead now :()";
     return "I'm a student. My name is " + name + ". I'm " + age + " years old.";
+  }
+  public void growImidiately() {
+    age++;
   }
 }
