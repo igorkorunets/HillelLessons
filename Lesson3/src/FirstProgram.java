@@ -7,13 +7,9 @@ public class FirstProgram {
     Object obj  = new Object();
     String str = "hello";
 
-    Student student1 = new Student();
-    student1.setName("John Doe");
-    student1.setAge(12);
+    Student student1 = new Student("John Doe", 12);
 
-    Student student2 = new Student();
-    student2.setName("Jonathan Doelsky");
-    student2.setAge(92);
+    Student student2 = new Student("Jonathan Doelsky", 92);
 
     System.out.println(student1);
     System.out.println(student2);
@@ -30,7 +26,17 @@ class Student {
   String name;
   int age;
 
-  
+  int deadAge = 94;
+
+  public Student(String name, int age) {
+    this.name = name;
+    this.age = age;
+    this.deadAge = deadAge;
+  }
+
+  public Student(String name, int age, int deadAge) {
+
+  }
 
   public String toString() {
     if (isAlreadyDead())
@@ -38,22 +44,19 @@ class Student {
 
     return "I'm a student. My name is " + name + ". I'm " + age + " years old.";
   }
-  public void setName(String name) {
-    this.name = name;
-  }
+
   public String getName() {
-    String name = "111";
     return "Mr. " + name;
   }
-  public void setAge(int age) {
-    this.age = age;
-  }
+
   public int getAge() {
     return age;
   }
+
   public boolean isAlreadyDead() {
     return age >= 94;
   }
+
   public void growImidiately() {
     age++;
   }
