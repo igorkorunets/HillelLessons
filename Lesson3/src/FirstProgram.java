@@ -9,7 +9,7 @@ public class FirstProgram {
 
     Student student1 = new Student("John Doe", 12);
 
-    Student student2 = new Student("Jonathan Doelsky", 92);
+    Student student2 = new Student("Jonathan Doelsky", 92, 93);
 
     System.out.println(student1);
     System.out.println(student2);
@@ -31,11 +31,11 @@ class Student {
   public Student(String name, int age) {
     this.name = name;
     this.age = age;
-    this.deadAge = deadAge;
   }
 
   public Student(String name, int age, int deadAge) {
-
+    this(name, age);
+    this.deadAge = deadAge;
   }
 
   public String toString() {
@@ -54,7 +54,7 @@ class Student {
   }
 
   public boolean isAlreadyDead() {
-    return age >= 94;
+    return age >= deadAge;
   }
 
   public void growImidiately() {
