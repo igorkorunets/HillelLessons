@@ -22,11 +22,15 @@ public class FirstProgram {
     System.out.println(student2);
     student2.growImidiately();
     System.out.println(student2);
+
+    System.out.println(" My name was " + student2.getName());
   }
 }
 class Student {
   String name;
   int age;
+
+  
 
   public String toString() {
     if (isAlreadyDead())
@@ -34,11 +38,18 @@ class Student {
 
     return "I'm a student. My name is " + name + ". I'm " + age + " years old.";
   }
-  public void setName(String nameParam) {
-    name = nameParam;
+  public void setName(String name) {
+    this.name = name;
+  }
+  public String getName() {
+    String name = "111";
+    return "Mr. " + name;
   }
   public void setAge(int age) {
     this.age = age;
+  }
+  public int getAge() {
+    return age;
   }
   public boolean isAlreadyDead() {
     return age >= 94;
