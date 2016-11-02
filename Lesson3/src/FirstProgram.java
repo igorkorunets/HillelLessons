@@ -21,7 +21,7 @@ public class FirstProgram {
 
     System.out.println(" My name was " + student2.getName());
 
-    System.out.println(Student.studentsQty);
+    System.out.println("Total number of created Student objects is: " + Student.studentsQty);
   }
 }
 class Student {
