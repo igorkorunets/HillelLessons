@@ -7,6 +7,15 @@ public class FirstProgram {
     Object obj  = new Object();
     String str = "hello";
 
+    System.out.println("Hello".length());
+    System.out.println(str.substring(1));
+
+    System.out.println("Size is " + args.length);
+
+    for(int i = 0; i < args.length; i++) {
+      System.out.println(args[i]);
+    }
+
     Student student1 = new Student("John Doe", 12);
 
     Student student2 = new Student("Jonathan Doelsky", 92, 93);
