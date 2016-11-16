@@ -32,7 +32,6 @@ class MoreArraysExamples {
     varargs();
     varargs("Hello", "Worm", ":)");
     varargsWithLeadingParameter(".....");
-  }
 
   public static void varargs(String ...args) {
     for (int i = 0; i < args.length; i++) {
