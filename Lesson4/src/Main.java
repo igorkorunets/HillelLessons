@@ -2,7 +2,7 @@
 Project name: "Пятый урок"
 16.11.2016
 */
-class Main {
+public class Main {
   public static void main(String ...args) {
 
     LightBulb bulb = new LightBulb();

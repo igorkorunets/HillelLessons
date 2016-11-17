@@ -2,7 +2,7 @@
 Project name: "Пятый урок"
 16.11.2016
 */
-class MoreArraysExamples {
+public class MoreArraysExamples {
   public static void main(String ...args) {
     int[] a1 = new int[5];
     int a2[] = new int[5];
@@ -27,11 +27,12 @@ class MoreArraysExamples {
     System.out.println(aa4[0]);
 
     int[][][] aaa1 = new int[1][][];
-    System.out.println(aa4[0]);
+    System.out.println(aa1[0]);
 
     varargs();
     varargs("Hello", "Worm", ":)");
     varargsWithLeadingParameter(".....");
+  }
 
   public static void varargs(String ...args) {
     for (int i = 0; i < args.length; i++) {

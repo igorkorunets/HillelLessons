@@ -2,9 +2,7 @@
 Project name: "Пятый урок"
 16.11.2016
 */
-import java.util.arrays;
-
-class LightBulb {
+public class LightBulb {
   private boolean state;
 
   public void on() {
@@ -26,5 +24,11 @@ class LightBulb {
 
   private void heatTheBulb() {
 
+  }
+
+  public boolean equals(Object that) {
+  if (this == that) return true;
+
+  return equalTo((LightBulb)that);
   }
 }
