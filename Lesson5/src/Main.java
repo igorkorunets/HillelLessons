@@ -8,9 +8,12 @@ import jelementary.people.Student;
 
 class Main {
   public static void main(String ... args) {
-    School school = new School("Hillel");
-    Group group = new Group("Java Elementary", school);
-    Student student = new Student("Æåíÿ Doe", school, group);
+    School school = new School();
+    school.setSchool("Hillel");
+    Group group = new Group();
+    group.setGroup("Java Elementary", school);
+    Student student = new Student();
+    student.setStudent("Æåíÿ Doe", school, group);
 
     System.out.println(student.getStudent());
 
