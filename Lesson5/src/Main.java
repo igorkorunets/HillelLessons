@@ -1,5 +1,5 @@
 /*
-Project name: "Пятый урок"
+Project name: "Шестой урок"
 20.11.16
 */
 import jelementary.School;
