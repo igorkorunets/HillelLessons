@@ -1,0 +1,131 @@
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6 (master)             
+$ ll                                                                                     
+total 0                                                                                  
+drwxr-xr-x 1 Jonathan 197609 0 ноя 25 00:11 test_app/                                    
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6 (master)             
+$ cd test_app/                                                                           
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ javac -d out -cp src src/Main.java                                                     
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ ll out                                                                                 
+total 4                                                                                  
+-rw-r--r-- 1 Jonathan 197609    0 ноя 25 00:11 empty                                     
+drwxr-xr-x 1 Jonathan 197609    0 ноя 25 00:44 jelementary/                              
+-rw-r--r-- 1 Jonathan 197609 1050 ноя 25 00:44 Main.class                                
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ java -cp out Main                                                                      
+SCHOOL: IT School Hillel, Address: Kanatnaya str, 22, Groups:                            
+         GROUP: JElementary, No. 1, Students:                                            
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+         GROUP: English Classes, No. 2, Students:                                        
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+                -> John Smith, 34 years old, rating: 1                                   
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ jar -help                                                                              
+Illegal option: h                                                                        
+Usage: jar {ctxui}[vfmn0PMe] [jar-file] [manifest-file] [entry-point] [-C dir] files ... 
+Options:                                                                                 
+    -c  create new archive                                                               
+    -t  list table of contents for archive                                               
+    -x  extract named (or all) files from archive                                        
+    -u  update existing archive                                                          
+    -v  generate verbose output on standard output                                       
+    -f  specify archive file name                                                        
+    -m  include manifest information from specified manifest file                        
+    -n  perform Pack200 normalization after creating a new archive                       
+    -e  specify application entry point for stand-alone application                      
+        bundled into an executable jar file                                              
+    -0  store only; use no ZIP compression                                               
+    -P  preserve leading '/' (absolute path) and ".." (parent directory) components from 
+file names                                                                               
+    -M  do not create a manifest file for the entries                                    
+    -i  generate index information for the specified jar files                           
+    -C  change to the specified directory and include the following file                 
+If any file is a directory then it is processed recursively.                             
+The manifest file name, the archive file name and the entry point name are               
+specified in the same order as the 'm', 'f' and 'e' flags.                               
+                                                                                         
+Example 1: to archive two class files into an archive called classes.jar:                
+       jar cvf classes.jar Foo.class Bar.class                                           
+Example 2: use an existing manifest file 'mymanifest' and archive all the                
+           files in the foo/ directory into 'classes.jar':                               
+       jar cvfm classes.jar mymanifest -C foo/ .                                         
+                                                                                         
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ jar -cvf app.jar out                                                                   
+added manifest                                                                           
+adding: out/(in = 0) (out= 0)(stored 0%)                                                 
+adding: out/empty(in = 0) (out= 0)(stored 0%)                                            
+adding: out/jelementary/(in = 0) (out= 0)(stored 0%)                                     
+adding: out/jelementary/Group.class(in = 1107) (out= 656)(deflated 40%)                  
+adding: out/jelementary/people/(in = 0) (out= 0)(stored 0%)                              
+adding: out/jelementary/people/Student.class(in = 665) (out= 416)(deflated 37%)          
+adding: out/jelementary/School.class(in = 1048) (out= 634)(deflated 39%)                 
+adding: out/Main.class(in = 1050) (out= 643)(deflated 38%)                               
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ jar -cvf app.jar -C out .                                                              
+added manifest                                                                           
+adding: empty(in = 0) (out= 0)(stored 0%)                                                
+adding: jelementary/(in = 0) (out= 0)(stored 0%)                                         
+adding: jelementary/Group.class(in = 1107) (out= 656)(deflated 40%)                      
+adding: jelementary/people/(in = 0) (out= 0)(stored 0%)                                  
+adding: jelementary/people/Student.class(in = 665) (out= 416)(deflated 37%)              
+adding: jelementary/School.class(in = 1048) (out= 634)(deflated 39%)                     
+adding: Main.class(in = 1050) (out= 643)(deflated 38%)                                   
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ java -jar app.jar                                                                      
+no main manifest attribute, in app.jar                                                   
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ java -cp app.jar Main                                                                  
+SCHOOL: IT School Hillel, Address: Kanatnaya str, 22, Groups:                            
+         GROUP: JElementary, No. 1, Students:                                            
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+         GROUP: English Classes, No. 2, Students:                                        
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+                -> John Smith, 34 years old, rating: 1                                   
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ touch manifest.txt                                                                     
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ atom manifest.txt                                                                      
+                                                                                         
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ cat manifest.txt                                                                       
+Main-Class: Main                                                                         
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ jar -cvfm app.jar manifest.txt -C out .                                                
+added manifest                                                                           
+adding: empty(in = 0) (out= 0)(stored 0%)                                                
+adding: jelementary/(in = 0) (out= 0)(stored 0%)                                         
+adding: jelementary/Group.class(in = 1107) (out= 656)(deflated 40%)                      
+adding: jelementary/people/(in = 0) (out= 0)(stored 0%)                                  
+adding: jelementary/people/Student.class(in = 665) (out= 416)(deflated 37%)              
+adding: jelementary/School.class(in = 1048) (out= 634)(deflated 39%)                     
+adding: Main.class(in = 1050) (out= 643)(deflated 38%)                                   
+                                                                                         
+Jonathan@Jonathan-ASUS MINGW64 ~/JavaProjects/HillelLessons/Lesson6/test_app (master)    
+$ java -jar app.jar                                                                      
+SCHOOL: IT School Hillel, Address: Kanatnaya str, 22, Groups:                            
+         GROUP: JElementary, No. 1, Students:                                            
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+         GROUP: English Classes, No. 2, Students:                                        
+                -> John Doe, 24 years old, rating: 1                                     
+                -> Jane Roe, 20 years old, rating: 1                                     
+                -> John Smith, 34 years old, rating: 1                                   
